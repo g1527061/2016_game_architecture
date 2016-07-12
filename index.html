@@ -25,6 +25,9 @@
     var directionalLight = new THREE.DirectionalLight( 0xffffff, 0.5 );
     directionalLight.position.set( 0, 1, 0 );
     scene.add( directionalLight );
+    
+    var light = new THREE.AmbientLight( 0x404040 ); // soft white light
+    scene.add( light );
 
     var geometry = new THREE.CubeGeometry(1, 1, 1); // 四角形の生成
     var material = new THREE.MeshBasicMaterial({ color: 'white' }); // マテリアルの作成（青）
