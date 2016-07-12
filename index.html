@@ -10,18 +10,18 @@
   <script src="three.min.js"></script> <!-- Three.js を取得 -->
   <script>
     var scene = new THREE.Scene(); // Three.js シーンオブジェクトの生成
-    var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000); // カメラの設定
+    var camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000); // カメラの設定
 
     var renderer = window.WebGLRenderingContext ? new THREE.WebGLRenderer() : new THREE.CanvasRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight); // ビューポートの大きさを設定
     document.body.appendChild(renderer.domElement); // レンダラをbodyに紐づけ
 
-    var geometry = new THREE.CubeGeometry(20, 20, 20); // 四角形の生成
-    var material = new THREE.MeshBasicMaterial({ color: 0x0000FF }); // マテリアルの作成（青）
+    var geometry = new THREE.CubeGeometry(1, 1, 1); // 四角形の生成
+    var material = new THREE.MeshBasicMaterial({ color: 0x202080 }); // マテリアルの作成（青）
     var cube = new THREE.Mesh(geometry, material); // メッシュとマテリアルからオブジェクトを生成
     scene.add(cube); // シーンに配置
 
-    camera.position.z = 50; // カメラをZ軸上に置く
+    camera.position.z = 5; // カメラをZ軸上に置く
 
     var render = function () {
       cube.rotation.x += 0.01; // 少しずつ回転
