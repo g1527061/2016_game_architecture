@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <title>Three.js sample</title>
-  <style> canvas { width: 100%; height: 100%; }</style>
+  <style> body { margin: 0; } canvas { width: 100%; height: 100%; }</style>
 </head>
 <body>
   <script src="three.min.js"></script> <!-- Three.js を取得 -->
@@ -18,7 +18,7 @@
     var camera = new THREE.PerspectiveCamera(fov, width / height, near, far); // カメラの設定
     camera.position.set( 0, 0, 10 );
 
-    var renderer = window.WebGLRenderingContext ? new THREE.WebGLRenderer() : new THREE.CanvasRenderer();
+    var renderer = new THREE.WebGLRenderer();
     renderer.setSize(width, height); // ビューポートの大きさを設定
     document.body.appendChild(renderer.domElement); // レンダラをbodyに紐づけ
 
@@ -31,14 +31,14 @@
     var mesh = new THREE.Mesh(geometry, material); // メッシュとマテリアルからオブジェクトを生成
     scene.add(mesh); // シーンに配置
 
-    camera.position.z = 5; // カメラをZ軸上に置く
+    camera.position.z = 10; // カメラをZ軸上に置く
     
     var render = function() {
+      requestAnimationFrame(render); // 60fpsで動かす
       mesh.rotation.x += 0.01; // 少しずつ回転
       mesh.rotation.y += 0.01;
 
       renderer.render(scene, camera); // 物体を描画
-      requestAnimationFrame(render); // 60fpsで動かす
     };// 描画をt定義して、そのまま起動させる
     
     render();
