@@ -33,7 +33,7 @@
 
     camera.position.z = 10; // カメラをZ軸上に置く
     
-    var update = function() {
+    (function update() {
       requestAnimationFrame(update); // ブラウザを更新するためのリクエスト
       
       // 少しずつ回転
@@ -41,7 +41,7 @@
       mesh.rotation.y += 0.01;
 
       renderer.render(scene, camera); // 物体を描画
-    };
+    })();
     
     update();// 起動させる
   </script>
