@@ -26,11 +26,14 @@
     scene.add(cube); // シーンに配置
 
     camera.position.z = 5; // カメラをZ軸上に置く
+    
+    var controls = new THREE.OrbitControls(camera, r
 
     var render = function () {
       cube.rotation.x += 0.01; // 少しずつ回転
       cube.rotation.y += 0.01;
 
+ontrols.update();
       renderer.render(scene, camera); // 物体を描画
       requestAnimationFrame(render); // 60fpsで動かす
     };
