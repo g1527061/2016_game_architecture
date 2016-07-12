@@ -16,7 +16,7 @@
     renderer.setSize(window.innerWidth, window.innerHeight); // ビューポートの大きさを設定
     document.body.appendChild(renderer.domElement); // レンダラをbodyに紐づけ
 
-    var directionalLight = new THREE.DirectionalLight('#ffffff', 1);// 光の色と強さ
+    var directionalLight = new THREE.DirectionalLight(0xffffff);// 光の色と強さ
     directionalLight.position.set(0, 0.7, 0.7);
     scene.add(directionalLight);
  
