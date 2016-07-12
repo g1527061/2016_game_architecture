@@ -25,7 +25,13 @@
     var directionalLight = new THREE.DirectionalLight( 0xffffff );// 光の色と強さ
     directionalLight.position.set(0, 0.7, 0.7);
     scene.add(directionalLight);
- 
+ 	// create a light
+	var light = new THREE.PointLight(0xffffff);
+	light.position.set(0,250,0);
+	scene.add(light);
+	var ambientLight = new THREE.AmbientLight(0x111111);
+	scene.add(ambientLight);
+	
     var geometry = new THREE.CubeGeometry(1, 1, 1); // 四角形の生成
     var material = new THREE.MeshBasicMaterial({ color: 'skyblue' }); // マテリアルの作成（青）
     var mesh = new THREE.Mesh(geometry, material); // メッシュとマテリアルからオブジェクトを生成
