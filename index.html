@@ -33,13 +33,15 @@
 
     camera.position.z = 5; // カメラをZ軸上に置く
     
-    (function render() {
+    var render = function() {
       mesh.rotation.x += 0.01; // 少しずつ回転
       mesh.rotation.y += 0.01;
 
       renderer.render(scene, camera); // 物体を描画
       requestAnimationFrame(render); // 60fpsで動かす
-    })();// 描画をt定義して、そのまま起動させる
+    };// 描画をt定義して、そのまま起動させる
+    
+    render();
   </script>
 </body>
 </html>
