@@ -22,9 +22,9 @@
     renderer.setSize(width, height); // ビューポートの大きさを設定
     document.body.appendChild(renderer.domElement); // レンダラをbodyに紐づけ
 
-    var directionalLight = new THREE.DirectionalLight( 0xffffff );// 光の色と強さ
-    directionalLight.position.set(0, 70, 70);
-    scene.add(directionalLight);
+    var directionalLight = new THREE.DirectionalLight( 0xffffff, 0.5 );
+    directionalLight.position.set( 0, 1, 0 );
+    scene.add( directionalLight );
 
     var geometry = new THREE.CubeGeometry(1, 1, 1); // 四角形の生成
     var material = new THREE.MeshBasicMaterial({ color: 'skyblue' }); // マテリアルの作成（青）
