@@ -17,7 +17,7 @@
     document.body.appendChild(renderer.domElement); // レンダラをbodyに紐づけ
 
     var directionalLight = new THREE.DirectionalLight('#ffffff', 1);// 光の色と強さ
-    directionalLight.position.set(0, 7, 10);
+    directionalLight.position.set(0, 0.7, 0.7);
     scene.add(directionalLight);
  
     var geometry = new THREE.CubeGeometry(1, 1, 1); // 四角形の生成
@@ -27,18 +27,13 @@
 
     camera.position.z = 5; // カメラをZ軸上に置く
     
-    var controls = new THREE.OrbitControls(camera, renderer.domElement);
-
-    var render = function () {
+    (function render() {
       cube.rotation.x += 0.01; // 少しずつ回転
       cube.rotation.y += 0.01;
 
-ontrols.update();
       renderer.render(scene, camera); // 物体を描画
       requestAnimationFrame(render); // 60fpsで動かす
-    };
-
-    render(); // 描画を起動させる
+    })();// 描画をt定義して、そのまま起動させる
   </script>
 </body>
 </html>
