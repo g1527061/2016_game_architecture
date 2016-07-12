@@ -23,7 +23,7 @@
     document.body.appendChild(renderer.domElement); // レンダラをbodyに紐づけ
 
     var directionalLight = new THREE.DirectionalLight( 0xffffff, 1.0 );
-    directionalLight.position.set( 0, 0.7, 0.7 );
+    directionalLight.position.set( 0.3, 0.7, 0.7 );
     scene.add( directionalLight );
     
     var geometry = new THREE.CubeGeometry(1, 1, 1); // 四角形の生成
